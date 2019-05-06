@@ -1,0 +1,34 @@
+r =int(input("enter number of rows:"))
+c =int(input("enter number of colomns:"))
+l = []
+lt = []
+for i in range(0, r):
+    l = input()
+    lt.append(list(l))
+print(lt)
+for i in range(r):
+    for j in range(c):
+        print(lt[i][j],end = ' ')
+    print()    
+print("across")
+for i in range(r):
+    for j in range(c):
+        if lt[i][j] != '*':
+            print(lt[i][j],end = '')
+            if j == c - 1:
+                print()
+        else:
+            print()
+print()
+print("down")
+for j in range(c):
+    for i in range(r):
+        if lt[i][j] != '*':
+            print(lt[i][j],end = '')
+            if i == r - 1:
+                print()
+        else:
+            print()
+
+
+    

@@ -1,0 +1,53 @@
+a = []
+a1 = list(input())
+a2 = list(input())
+a3 = list(input())
+a4 = list(input())
+a5 = list(input())
+a6 = list(input())
+ia =[a1,a2,a3,a4,a5]
+for i in range(len(a)):
+    for j in range(len(a1)):
+        if a[i][j] == ' ':
+            m,n = i,j
+
+for k in range(len(a6)):
+    if a6[k] == 'a':
+        tem = a[m][n]
+        a[m][n] = a[m - 1][n]
+        a[m - 1][n] = tem
+        m , n = m - 1,n
+        if m == 0:
+            print("no configuration")
+            break
+    elif a6[k] == 'b':
+        tem = a[m][n]
+        a[m][n] = a[m + 1][n]
+        a[m + 1][n] = tem
+        m ,n = m + 1,n
+        if n == 4:
+            print("no configuration")
+            break
+    elif a6[k] == 'r':
+        tem = a[m][n]
+        a[m][n] = a[m][n + 1]
+        a[m][n + 1] = tem
+        m,n = m,n + 1
+        if n == 4:
+            print("no configuratin")
+            break
+    elif a6[k] == 'l':
+        tem = a[m][n]
+        a[m][n] == a[m][n - 1]
+        a[m][n - 1] = tem
+        m,n = m,n - 1
+        if n == 0:
+            print("noconfigurtion")
+            break
+    else:
+        print("puzzle #1")
+        for i in range(len(a)):
+            for j in range(len(a[i])):
+                print(a[i][j],end = ' ')
+        print( )   
+
